@@ -6,6 +6,8 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const auth = getAuth(app);
 
@@ -49,9 +51,17 @@ export default function useFirebaseAuth() {
   // sign up
   const signUp = async (email, password) => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-    } catch (error) {
-      throw error;
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = formatAuthUser(result.user);
+
+      const docRef = await setDoc(doc(db, "User", user.uid), user);
+    } catch (e) {
+      console.error("Error adding document: ", e);
     }
   };
 
