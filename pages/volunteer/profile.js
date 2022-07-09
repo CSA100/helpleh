@@ -10,20 +10,8 @@ export default function Profile() {
 
   useEffect(() => {
     if (authUser) {
-      (async () => {
-        const querySnapshot = await getDocs(
-          query(collection(db, "User"), where("uid", "==", authUser.uid))
-        );
-
-        querySnapshot.forEach((doc) => {
-          setUser(doc.data());
-        });
-      })();
+      setUser(authUser);
     }
   }, [authUser]);
-  return (
-    <>
-      <UserCard key={user.id} user={user}></UserCard>
-    </>
-  );
+  return <>{user ? <UserCard key={user.id} user={user}></UserCard> : <></>}</>;
 }

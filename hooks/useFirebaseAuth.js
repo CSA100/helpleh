@@ -8,6 +8,7 @@ import {
 import app from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import { getDocs, query, collection, where } from "firebase/firestore";
 
 const auth = getAuth(app);
 
@@ -28,8 +29,14 @@ export default function useFirebaseAuth() {
     }
 
     setLoading(true);
-    var formattedUser = formatAuthUser(authState);
-    setAuthUser(formattedUser);
+
+    const querySnapshot = await getDocs(
+      query(collection(db, "User"), where("uid", "==", authState.uid))
+    );
+
+    querySnapshot.forEach((doc) => {
+      setAuthUser(doc.data());
+    });
     setLoading(false);
   };
 
