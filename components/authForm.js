@@ -11,20 +11,36 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  FormErrorMessage,
+  FormHelperText,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useAuth } from "../context/AuthUserContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function AuthForm({ formType }) {
   const { authUser, loading, signUp, signIn } = useAuth();
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const router = useRouter();
 
+  useEffect(() => {
+    if (authUser) {
+      router.push("/");
+    }
+  }, [authUser]);
+
   // on change handlers
-  const handleEmailChange = (e) => setEmail(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleEmailChange = (e) => {
+    setEmailError("");
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPasswordError("");
+    setPassword(e.target.value);
+  };
 
   const onSubmit = async (e) => {
     console.log("running! ", e);
@@ -36,10 +52,10 @@ export default function AuthForm({ formType }) {
       } else {
         result = await signIn(email, password);
       }
-      console.log("auth success: ", result);
-      router.push("/");
     } catch (error) {
-      console.log("error: ", error);
+      if ((error.code = "auth/email-already-in-use")) {
+        setEmailError("Email already Taken!");
+      }
     }
   };
 
@@ -72,7 +88,17 @@ export default function AuthForm({ formType }) {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" value={email} onChange={handleEmailChange} />
+              <Input
+                type="email"
+                isInvalid={emailError}
+                value={email}
+                onChange={handleEmailChange}
+              />
+              {emailError ? (
+                <FormHelperText>{emailError}</FormHelperText>
+              ) : (
+                <FormHelperText>Email is required</FormHelperText>
+              )}
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>

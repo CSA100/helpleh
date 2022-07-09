@@ -38,13 +38,21 @@ export default function useFirebaseAuth() {
   }, []);
 
   // sign in
-  const signIn = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const signIn = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      throw error;
+    }
   };
 
   // sign up
-  const signUp = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+  const signUp = async (email, password) => {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      throw error;
+    }
   };
 
   // sign out
