@@ -1,6 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 
 import { extendTheme } from "@chakra-ui/react";
+import Layout from "../components/layout";
 import { AuthUserProvider } from "../context/AuthUserContext";
 
 const colors = {
@@ -12,20 +13,22 @@ const colors = {
   primary: {
     100: "#FF886A",
     200: "#fc977e",
-    300: "#FCF6CF"
-  }
+    300: "#FCF6CF",
+  },
 };
 
 const theme = extendTheme({ colors });
 
-function HelpLeh({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <AuthUserProvider>
       <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraProvider>
     </AuthUserProvider>
   );
 }
 
-export default HelpLeh;
+export default App;
