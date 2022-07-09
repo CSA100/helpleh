@@ -11,7 +11,7 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
   
-  export default function UserCard({opp}) {
+  export default function UserCard({user}) {
     return (
       <Center py={6}>
         <Box
@@ -32,53 +32,36 @@ import {
             pos={'relative'}
           />
           <Heading fontSize={'2xl'} fontFamily={'body'}>
-            {opp.name}
+            {user.name}
           </Heading>
           <Text py={1} fontWeight={600} color={'gray.500'} mb={4}>
-            {opp.email}
+            {user.email}
           </Text>
           <Text
             textAlign={'center'}
             color={useColorModeValue('gray.700', 'gray.400')}
             px={3}>
-            Contact: {opp.contact}
+            Contact: {user.contact}
           </Text>
 
           <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
             <Text>Skills:</Text>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-              {opp.skills[0]}
-            </Badge>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-              {opp.skills[1]}
-            </Badge>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-                {opp.skills[2]}
-            </Badge>
+            {user.skills.map((skill, i)=>{
+              return(
+                <Badge
+                  key={i}
+                  px={2}
+                  py={1}
+                  fontWeight={'400'}>
+                  {skill}
+                </Badge>
+
+              )
+            })}
+            
           </Stack>
   
           <Stack mt={8} direction={'row'} spacing={4}>
-            {/* <Button
-              flex={1}
-              fontSize={'sm'}
-              rounded={'full'}
-              _focus={{
-                bg: 'gray.200',
-              }}>
-              Message
-            </Button> */}
             <Button
               flex={1}
               fontSize={'sm'}
