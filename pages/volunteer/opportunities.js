@@ -7,7 +7,6 @@ export default function Opportunities() {
   const [opps, setOpps] = useState([]);
   useEffect(() => {
     (async () => {
-      console.log("here");
       const querySnapshot = await getDocs(
         collection(db, "OpportunityListings")
       );

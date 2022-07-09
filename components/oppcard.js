@@ -16,7 +16,7 @@ export default function OppCard({ opp }) {
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm:"550px", md: "550px" }}
+        w={{ sm: "550px", md: "550px" }}
         height={{ sm: "300px", md: "300px" }}
         direction={{ base: "row" }}
         bg={"white"}
@@ -49,7 +49,7 @@ export default function OppCard({ opp }) {
           pt={2}
         >
           <Heading fontSize={"2xl"} fontFamily={"body"}>
-            {opp.name}
+            {opp.orgname}
           </Heading>
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
             <b>Contact:</b> {opp.contact}
