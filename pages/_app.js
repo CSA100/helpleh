@@ -12,7 +12,7 @@ const colors = {
 
 const theme = extendTheme({ colors });
 
-function MyApp({ Component, pageProps }) {
+function HelpLeh({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
@@ -20,4 +20,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default HelpLeh;
