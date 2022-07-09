@@ -31,12 +31,13 @@ import {
               User Name
               </Heading>
               <Center height='150px'>
-  <Divider orientation='vertical' />
-</Center>
+                <Divider orientation='vertical' />
+              </Center>
             </HStack>
-          <Stack mt={4} direction={'row'} spacing={4}>
-          </Stack>
-        </Box>
+            <Stack mt={4} direction={'row'} spacing={4}>
+            </Stack>
+          </Box>
+          <HStack>
         <Box
           maxW={'400px'}
           w={'full'}
@@ -54,6 +55,7 @@ import {
               src={
                 'https://www.nrn.com/sites/nrn.com/files/Starbucks-AI-earnings-call_4.jpg'
               }
+              alt = 'starbucks'
               ></Image>
             </Center>
           <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
@@ -101,6 +103,7 @@ import {
               src={
                 'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/4-CYTKLXJETPVAGX/hero/acf29f43d96648939b4bb7e023bef331_1648777871674508754.jpeg'
               }
+              alt = 'starbucks'
               ></Image>
             </Center>
           <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
@@ -134,6 +137,8 @@ import {
             </Button>
           </Stack>
         </Box>
+        </HStack>
+        <HStack>
         <Box
           maxW={'400px'}
           w={'full'}
@@ -151,6 +156,7 @@ import {
               src={
                 'https://i.imgur.com/0jBdf9Q.jpg'
               }
+              alt = 'starbucks'
               ></Image>
             </Center>
           <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
@@ -201,6 +207,7 @@ import {
               src={
                 'https://www.ionorchard.com/static/media/gift-vouchers.3d80f159.jpg'
               }
+              alt = 'starbucks'
               ></Image>
             </Center>
           <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
@@ -234,6 +241,7 @@ import {
             </Button>
           </Stack>
         </Box>
+        </HStack>
         </VStack>
       </Center>
     );
