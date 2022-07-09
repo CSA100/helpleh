@@ -6,6 +6,8 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const auth = getAuth(app);
 
@@ -43,18 +45,20 @@ export default function useFirebaseAuth() {
   };
 
   // sign up
-  const signUp = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password).then(
-      function (user) {
-        var user = firebase.auth().currentUser;
-        console.log("userr: ", user);
-      },
-      function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      }
-    );
+  const signUp = async (email, password) => {
+    try {
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = formatAuthUser(result.user);
+
+      const docRef = await setDoc(doc(db, "User", user.uid), user);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   };
 
   // sign out
