@@ -69,7 +69,6 @@ export default function LargeWithLogoLeft() {
             <ListHeader>Follow Us</ListHeader>
             <Link href={'#'}>Facebook</Link>
             <Link href={'#'}>Twitter</Link>
-            <Link href={'#'}>Dribbble</Link>
             <Link href={'#'}>Instagram</Link>
             <Link href={'#'}>LinkedIn</Link>
           </Stack>

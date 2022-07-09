@@ -17,9 +17,9 @@ import {
   Tag,
   TagLabel,
 } from "@chakra-ui/react";
-import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import React from "react";
+import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 
 function onAccept() {
   return;

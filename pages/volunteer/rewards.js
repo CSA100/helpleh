@@ -7,118 +7,215 @@ import {
     Stack,
     Button,
     Image,
+    VStack,
     Link,
     Badge,
     useColorModeValue,
+    Divider,
   } from '@chakra-ui/react';
   
   export default function RewardPage() {
     return (
       <Center py={6}>
+        <VStack>
         <Box
-          maxW={'350px'}
+          maxW={'400px'}
           w={'full'}
           bg={useColorModeValue('white', 'gray.900')}
           boxShadow={'md'}
           rounded={'xl'}
           p={6}
-          textAlign={'center'}>
+          textAlign={'left'}>
             <Center>
               <Image
               rounded={'xl'}
-              width={'280px'}
+              width={'350px'}
+              height={'220px'}
+              objectFit='cover'
               src={
-                'https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
+                'https://www.nrn.com/sites/nrn.com/files/Starbucks-AI-earnings-call_4.jpg'
               }
               ></Image>
             </Center>
-          <Avatar
-            size={'xl'}
-            src={
-              'https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
-            }
-            alt={'Avatar Alt'}
-            mb={4}
-            pos={'relative'}
-            _after={{
-              content: '""',
-              w: 4,
-              h: 4,
-              bg: 'green.300',
-              border: '2px solid white',
-              rounded: 'full',
-              pos: 'absolute',
-              bottom: 0,
-              right: 3,
-            }}
-          />
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
-            Yong James
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
+            $10 Starbucks Gift Card
           </Heading>
-          <Text py={1} fontWeight={600} color={'gray.500'} mb={4}>
-            yongjames@email.com
-          </Text>
-          <Text
-            textAlign={'center'}
-            color={useColorModeValue('gray.700', 'gray.400')}
-            px={3}>
-            Contact: 97365732
-          </Text>
-  
-          <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
-            <Text>Skills:</Text>
-            <Badge
-              px={2}
-              py={1}
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
+          <Badge
+              px={3}
+              py={3}
               bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-              cooking
+              fontWeight={'600'}>
+              200 Points
             </Badge>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-              photography
-            </Badge>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-              music
-            </Badge>
-          </Stack>
-  
-          <Stack mt={8} direction={'row'} spacing={4}>
             <Button
               flex={1}
               fontSize={'sm'}
               rounded={'full'}
+              bg={'primary.100'}
+              color={'white'}
+              _hover={{
+                bg: 'primary.200',
+              }}
               _focus={{
-                bg: 'gray.200',
+                bg: 'primary.100',
               }}>
-              Message
+              Redeem
             </Button>
+          </Stack>
+        </Box>
+        <Box
+          maxW={'400px'}
+          w={'full'}
+          bg={useColorModeValue('white', 'gray.900')}
+          boxShadow={'md'}
+          rounded={'xl'}
+          p={6}
+          textAlign={'left'}>
+            <Center>
+              <Image
+              rounded={'xl'}
+              width={'350px'}
+              height={'220px'}
+              objectFit='cover'
+              src={
+                'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/4-CYTKLXJETPVAGX/hero/acf29f43d96648939b4bb7e023bef331_1648777871674508754.jpeg'
+              }
+              ></Image>
+            </Center>
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
+            $10 Coffee Bean Gift Card
+          </Heading>
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
+          <Badge
+              px={3}
+              py={3}
+              bg={useColorModeValue('gray.50', 'gray.800')}
+              fontWeight={'600'}>
+              200 Points
+            </Badge>
             <Button
               flex={1}
               fontSize={'sm'}
               rounded={'full'}
-              bg={'blue.400'}
+              bg={'primary.100'}
               color={'white'}
               boxShadow={
                 '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
               }
               _hover={{
-                bg: 'blue.500',
+                bg: 'primary.200',
               }}
               _focus={{
-                bg: 'blue.500',
+                bg: 'primary.100',
               }}>
-              Follow
+              Redeem
             </Button>
           </Stack>
         </Box>
+        <Box
+          maxW={'400px'}
+          w={'full'}
+          bg={useColorModeValue('white', 'gray.900')}
+          boxShadow={'md'}
+          rounded={'xl'}
+          p={6}
+          textAlign={'left'}>
+            <Center>
+              <Image
+              rounded={'xl'}
+              width={'350px'}
+              height={'220px'}
+              objectFit='cover'
+              src={
+                'https://i.imgur.com/0jBdf9Q.jpg'
+              }
+              ></Image>
+            </Center>
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
+            $10 FairPrice Voucher
+          </Heading>
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
+          <Badge
+              px={3}
+              py={3}
+              bg={useColorModeValue('gray.50', 'gray.800')}
+              fontWeight={'600'}>
+              100 Points
+            </Badge>
+            <Button
+              flex={1}
+              fontSize={'sm'}
+              rounded={'full'}
+              bg={'primary.100'}
+              color={'white'}
+              boxShadow={
+                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+              }
+              _hover={{
+                bg: 'primary.200',
+              }}
+              _focus={{
+                bg: 'primary.100',
+              }}>
+              Redeem
+            </Button>
+          </Stack>
+        </Box>
+        <Box
+          maxW={'400px'}
+          w={'full'}
+          bg={useColorModeValue('white', 'gray.900')}
+          boxShadow={'md'}
+          rounded={'xl'}
+          p={6}
+          textAlign={'left'}>
+            <Center>
+              <Image
+              rounded={'xl'}
+              width={'350px'}
+              height={'220px'}
+              objectFit='cover'
+              src={
+                'https://www.ionorchard.com/static/media/gift-vouchers.3d80f159.jpg'
+              }
+              ></Image>
+            </Center>
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
+            $50 Capital Voucher
+          </Heading>
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
+          <Badge
+              px={3}
+              py={3}
+              bg={useColorModeValue('gray.50', 'gray.800')}
+              fontWeight={'600'}>
+              400 Points
+            </Badge>
+            <Button
+              flex={1}
+              fontSize={'sm'}
+              rounded={'full'}
+              bg={'primary.100'}
+              color={'white'}
+              boxShadow={
+                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+              }
+              _hover={{
+                bg: 'primary.200',
+              }}
+              _focus={{
+                bg: 'primary.100',
+              }}>
+              Redeem
+            </Button>
+          </Stack>
+        </Box>
+        </VStack>
       </Center>
     );
   }

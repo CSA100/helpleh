@@ -312,13 +312,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Rewards",
-    children: [
-      {
-        label: "View Rewards",
-        subLabel: "Exchange your points for rewards here!",
-        href: "/volunteer/rewards",
-      },
-    ],
+    href: "/volunteer/rewards",
   },
   // {
   //   label: 'Learn Design',
