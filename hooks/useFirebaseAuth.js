@@ -78,6 +78,7 @@ export default function useFirebaseAuth() {
 
   return {
     authUser,
+    setAuthUser,
     loading,
     signIn,
     signUp,
