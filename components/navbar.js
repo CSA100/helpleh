@@ -5,6 +5,7 @@ import {
   Text,
   IconButton,
   Button,
+  Image,
   Menu,
   MenuButton,
   MenuList,
@@ -13,7 +14,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -28,10 +28,11 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { useAuth } from "../context/AuthUserContext";
+import Link from "./link";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
-  const { authUser } = useAuth();
+  const { authUser, logOut } = useAuth();
 
   return (
     <Box>
@@ -66,7 +67,9 @@ export default function WithSubnavigation() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            <Box boxSize="sm">
+              <Image src="../images/Logo.png" alt="Logo" />
+            </Box>
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -91,6 +94,7 @@ export default function WithSubnavigation() {
               >
                 Profile
               </Button>
+              <Button onClick={logOut}>Log out</Button>
               <Avatar
                 size={"sm"}
                 src={

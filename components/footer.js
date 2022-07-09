@@ -4,6 +4,7 @@ import {
   Box,
   Container,
   Link,
+  Image,
   SimpleGrid,
   Stack,
   Text,
@@ -49,19 +50,20 @@ export default function LargeWithLogoLeft() {
           <Stack spacing={6}>
             <Box>
               <Logo color={useColorModeValue('gray.700', 'white')} />
+              <Image src='../images/Footer_Logo.png' alt='Dan Abramov' />
             </Box>
             <Text fontSize={'sm'}>
-              © 2022 Chakra Templates. All rights reserved
+              © 2022 HelpLeh! All rights reserved
             </Text>
           </Stack>
-          <Stack align={'flex-start'}>
+          {/* <Stack align={'flex-start'}>
             <ListHeader>Product</ListHeader>
             <Link href={'#'}>Overview</Link>
             <Link href={'#'}>Features</Link>
             <Link href={'#'}>Tutorials</Link>
             <Link href={'#'}>Pricing</Link>
             <Link href={'#'}>Releases</Link>
-          </Stack>
+          </Stack> */}
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
             <Link href={'#'}>About</Link>
