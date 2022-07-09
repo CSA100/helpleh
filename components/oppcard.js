@@ -7,16 +7,16 @@ import {
   Image,
   Stack,
   Text,
-  HStack
+  HStack,
 } from "@chakra-ui/react";
-import { CalendarIcon, EditIcon } from '@chakra-ui/icons'
-export default function OppCard({ opp, children, isOrg}) {
+import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
+export default function OppCard({ opp, children, isOrg }) {
   return (
     <Center py={6}>
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm:"550px", md: "550px" }}
+        w={{ sm: "550px", md: "550px" }}
         height={{ sm: "250px", md: "250px" }}
         direction={{ base: "row" }}
         bg={"white"}
@@ -31,23 +31,25 @@ export default function OppCard({ opp, children, isOrg}) {
           alignItems="center"
         >
           {/* Display Picture */}
-          <Image
-            rounded="lg"
-            alt=""
-            objectFit="cover"
-            boxSize={{ sm: "200px", md: "90%" }}
-            src={
-              opp.imageURL 
-            }
-          />
+          {opp.imageURL ? (
+            <Image
+              rounded="lg"
+              alt=""
+              objectFit="cover"
+              boxSize={{ sm: "200px", md: "90%" }}
+              src={opp.imageURL}
+            />
+          ) : (
+            <></>
+          )}
         </Flex>
         <Stack
           justifyContent="center"
           p={4}
           pt={4}
-          w={{ sm:"400px", md: "400px" }}
+          w={{ sm: "400px", md: "400px" }}
           height={{ sm: "215px", md: "215px" }}
-        > 
+        >
           <HStack justify="space-between">
             <Heading fontSize={"2xl"} fontFamily={"body"}>
               {opp.orgname}
