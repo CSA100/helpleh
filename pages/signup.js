@@ -1,13 +1,13 @@
 import styles from "../styles/Home.module.css";
-import SimpleCard from "../components/signup";
 import WithSubnavigation from "../components/navbar";
 import LargeWithLogoLeft from "../components/footer";
+import AuthForm from "../components/authForm";
 
 export default function Signup() {
   return (
     <div className={styles.container}>
       <WithSubnavigation />
-      <SimpleCard formType="signUp" />
+      <AuthForm formType="signUp" />
       <LargeWithLogoLeft />
     </div>
   );
