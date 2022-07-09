@@ -95,7 +95,7 @@ export default function AuthForm({ formType }) {
                 onChange={handleEmailChange}
               />
               {emailError ? (
-                <FormHelperText>{emailError}</FormHelperText>
+                <FormHelperText color="red.300">{emailError}</FormHelperText>
               ) : (
                 <FormHelperText>Email is required</FormHelperText>
               )}
