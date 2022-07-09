@@ -49,7 +49,7 @@ export default function OppCard({ opp, children}) {
           p={4}
           pt={4}
           w={{ sm:"400px", md: "400px" }}
-          height={{ sm: "200px", md: "200px" }}
+          height={{ sm: "215px", md: "215px" }}
         >
           <Heading fontSize={"2xl"} fontFamily={"body"}>
             {opp.orgname}
