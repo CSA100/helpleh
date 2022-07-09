@@ -69,14 +69,14 @@ import {
               py={1}
               bg={useColorModeValue('gray.50', 'gray.800')}
               fontWeight={'400'}>
-              patient
+              photography
             </Badge>
             <Badge
               px={2}
               py={1}
               bg={useColorModeValue('gray.50', 'gray.800')}
               fontWeight={'400'}>
-              children
+              music
             </Badge>
           </Stack>
   

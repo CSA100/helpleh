@@ -16,26 +16,27 @@ export default function OppCard({ opp }) {
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm: "95%", md: "540px" }}
-        height={{ sm: "357px", md: "15rem" }}
-        direction={{ base: "column", md: "row" }}
+        w={{ sm:"550px", md: "550px" }}
+        height={{ sm: "300px", md: "300px" }}
+        direction={{ base: "row" }}
         bg={"white"}
         color="black"
         boxShadow={"2xl"}
         padding={4}
       >
         <Flex
-          w={{ sm: "100%", md: "100px" }}
-          bg="blue.200"
+          w={{ sm: "200px", md: "200px" }}
+          bg="white.200"
           justifyContent={"center"}
           alignItems="center"
         >
+          {/* Display Picture */}
           <Image
             alt=""
             objectFit="cover"
-            boxSize={{ sm: "50px", md: "100%" }}
+            boxSize={{ sm: "90%", md: "90%" }}
             src={
-              "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+              "https://www.healthcare.com.sg/wp-content/uploads/2020/10/st-andrews-nursing-home-buangkok.jpg"
             }
           />
         </Flex>
@@ -43,7 +44,7 @@ export default function OppCard({ opp }) {
           flex={1}
           flexDirection="column"
           justifyContent="center"
-          alignItems="center"
+          alignItems="left"
           p={1}
           pt={2}
         >
@@ -57,17 +58,17 @@ export default function OppCard({ opp }) {
             <b>Location:</b> {opp.location}
           </Text>
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
-            <b>Date and Time:</b> {opp.datetime}
+            <b>Date & Time:</b> {opp.datetime}
           </Text>
-          <Text textAlign={"center"} color={"gray.700"} px={3}>
+          <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
             <b>Job Scope:</b> {opp.jobscope}
           </Text>
 
           <Stack
-            width={"100%"}
+            width={"80%"}
             mt={"2rem"}
             direction={"row"}
-            padding={2}
+            padding={1}
             justifyContent={"space-between"}
             alignItems={"center"}
           >
@@ -75,7 +76,7 @@ export default function OppCard({ opp }) {
               flex={1}
               fontSize={"sm"}
               rounded={"full"}
-              bg={"blue.400"}
+              bg={"primary.100"}
               color={"white"}
               boxShadow={
                 "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
