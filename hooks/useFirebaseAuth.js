@@ -49,7 +49,7 @@ export default function useFirebaseAuth() {
   };
 
   // sign up
-  const signUp = async (email, password) => {
+  const signUp = async (email, password, name, age, contact, skills) => {
     try {
       const result = await createUserWithEmailAndPassword(
         auth,
@@ -59,7 +59,13 @@ export default function useFirebaseAuth() {
 
       const user = formatAuthUser(result.user);
 
-      const docRef = await setDoc(doc(db, "User", user.uid), user);
+      const docRef = await setDoc(doc(db, "User", user.uid), {
+        ...user,
+        name,
+        age,
+        contact,
+        skills,
+      });
     } catch (e) {
       console.error("Error adding document: ", e);
     }
