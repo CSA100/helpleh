@@ -32,21 +32,21 @@ import {
             pos={'relative'}
           />
           <Heading fontSize={'2xl'} fontFamily={'body'}>
-            {user.name}
+            {user?.name ?? "No Name"}
           </Heading>
           <Text py={1} fontWeight={600} color={'gray.500'} mb={4}>
-            {user.email}
+            { user?.email ?? "No Email"}
           </Text>
           <Text
             textAlign={'center'}
             color={useColorModeValue('gray.700', 'gray.400')}
             px={3}>
-            Contact: {user.contact}
+            {/* Contact: {user.contact} */}
           </Text>
 
           <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
             <Text>Skills:</Text>
-            {user.skills.map((skill, i)=>{
+            {user?.skills ? user.skills.map((skill, i)=>{
               return(
                 <Badge
                   key={i}
@@ -57,7 +57,7 @@ import {
                 </Badge>
 
               )
-            })}
+            }) : <Text>You have not added a skill</Text>}
             
           </Stack>
   
