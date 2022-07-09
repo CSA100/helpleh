@@ -14,6 +14,7 @@ import {
   Stack,
   Collapse,
   Icon,
+  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -28,7 +29,6 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { useAuth } from "../context/AuthUserContext";
-import Link from "./link";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -67,9 +67,9 @@ export default function WithSubnavigation() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            <Box boxSize="sm">
+            {/* <Box boxSize="sm">
               <Image src="../images/Logo.png" alt="Logo" />
-            </Box>
+            </Box> */}
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
