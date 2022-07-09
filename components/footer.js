@@ -54,14 +54,14 @@ export default function LargeWithLogoLeft() {
               © 2022 Chakra Templates. All rights reserved
             </Text>
           </Stack>
-          <Stack align={'flex-start'}>
+          {/* <Stack align={'flex-start'}>
             <ListHeader>Product</ListHeader>
             <Link href={'#'}>Overview</Link>
             <Link href={'#'}>Features</Link>
             <Link href={'#'}>Tutorials</Link>
             <Link href={'#'}>Pricing</Link>
             <Link href={'#'}>Releases</Link>
-          </Stack>
+          </Stack> */}
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
             <Link href={'#'}>About</Link>
