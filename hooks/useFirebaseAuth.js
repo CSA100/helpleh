@@ -3,6 +3,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import app from "../firebase";
 
@@ -46,10 +47,16 @@ export default function useFirebaseAuth() {
     createUserWithEmailAndPassword(auth, email, password);
   };
 
+  // sign out
+  const logOut = () => {
+    signOut(auth);
+  };
+
   return {
     authUser,
     loading,
     signIn,
     signUp,
+    logOut,
   };
 }

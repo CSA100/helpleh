@@ -7,7 +7,7 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <WithSubnavigation />
-      <SimpleCard />
+      <SimpleCard formType="signIn" />
       <LargeWithLogoLeft />
     </div>
   );
