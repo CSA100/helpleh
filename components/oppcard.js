@@ -18,7 +18,6 @@ export default function OppCard({ opp }) {
         borderRadius="lg"
         w={{ sm: "95%", md: "540px" }}
         height={{ sm: "357px", md: "15rem" }}
-        // direction="row"
         direction={{ base: "column", md: "row" }}
         bg={"white"}
         color="black"
