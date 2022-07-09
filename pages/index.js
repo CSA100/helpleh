@@ -1,5 +1,4 @@
 import styles from "../styles/Home.module.css";
-import WithSubnavigation from "../components/navbar";
 import LargeWithLogoLeft from "../components/footer";
 
 import { useRouter } from "next/router";
@@ -16,10 +15,5 @@ export default function Home() {
 
   console.log("authUser: ", authUser);
   console.log("loading: ", loading);
-  return (
-    <div className={styles.container}>
-      <WithSubnavigation />
-      <LargeWithLogoLeft />
-    </div>
-  );
+  return <div className={styles.container}>index</div>;
 }
