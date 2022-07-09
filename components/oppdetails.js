@@ -15,27 +15,17 @@ import {
   HStack,
   useColorModeValue,
   Tag,
-<<<<<<< HEAD
   TagLabel,
 } from "@chakra-ui/react";
-import { CalendarIcon } from "@chakra-ui/icons";
+import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import React from "react";
-=======
-  TagLabel
-} from '@chakra-ui/react';
-import { CalendarIcon, EditIcon } from '@chakra-ui/icons'
-import Image from 'next/image';
-import React from 'react'
-
->>>>>>> 9fb92349785f569213305bc2d1ab3bd2078e186f
 
 function onAccept() {
   return;
 }
 
-<<<<<<< HEAD
-export default function OppDetails({ opp }) {
+export default function OppDetails({ opp, isOrg }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -56,30 +46,6 @@ export default function OppDetails({ opp }) {
       >
         See Details
       </Button>
-
-=======
-export default function OppDetails({opp, isOrg}) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  return (
-    <>
-      <Button
-      size="md"
-      fontSize={"sm"}
-      rounded={"full"}
-      bg={"primary.100"}
-      color={"white"}
-      variant="outline"
-      _hover={{
-        bg: "primary.200",
-      }}
-      _focus={{
-        bg: "primary.100",
-      }}
-      onClick={onOpen}
-    >
-      See Details
-    </Button>
->>>>>>> 9fb92349785f569213305bc2d1ab3bd2078e186f
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -90,21 +56,10 @@ export default function OppDetails({opp, isOrg}) {
               mt={-6}
               mx={-6}
               mb={0}
-<<<<<<< HEAD
               pos={"relative"}
               overflow="hidden"
             >
-              <Image src={opp.imageURL} layout={"fill"} />
-=======
-              pos={'relative'}
-              overflow='hidden'
-              >
-              <Image
-                alt=''
-                src={opp.imageURL}
-                layout={'fill'}
-              />
->>>>>>> 9fb92349785f569213305bc2d1ab3bd2078e186f
+              <Image alt="" src={opp.imageURL} layout={"fill"} />
             </Box>
           </ModalHeader>
           <ModalCloseButton />
