@@ -13,9 +13,9 @@ export default function Home() {
   const { authUser, loading } = useAuth();
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (!loading && !authUser) router.push("/login");
-  // }, [authUser, loading]);
+  useEffect(() => {
+    if (!loading && !authUser) router.push("/login");
+  }, [authUser, loading]);
 
   console.log("authUser: ", authUser);
   console.log("loading: ", loading);

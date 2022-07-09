@@ -13,7 +13,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -28,10 +27,11 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { useAuth } from "../context/AuthUserContext";
+import Link from "./link";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
-  const { authUser } = useAuth();
+  const { authUser, logOut } = useAuth();
 
   return (
     <Box>
@@ -91,6 +91,7 @@ export default function WithSubnavigation() {
               >
                 Profile
               </Button>
+              <Button onClick={logOut}>Log out</Button>
               <Avatar
                 size={"sm"}
                 src={
@@ -101,28 +102,32 @@ export default function WithSubnavigation() {
           )}
           {!authUser && (
             <>
-              <Button
-                as={"a"}
-                fontSize={"sm"}
-                fontWeight={400}
-                variant={"link"}
-                href={"#"}
-              >
-                Sign In
-              </Button>
-              <Button
-                display={{ base: "none", md: "inline-flex" }}
-                fontSize={"sm"}
-                fontWeight={600}
-                color={"white"}
-                bg={"primary.100"}
-                href={"#"}
-                _hover={{
-                  bg: "primary.200",
-                }}
-              >
-                Sign Up
-              </Button>
+              <Link href="/login">
+                <Button
+                  as={"a"}
+                  fontSize={"sm"}
+                  fontWeight={400}
+                  variant={"link"}
+                  href={"/login"}
+                >
+                  Sign In
+                </Button>
+              </Link>
+              <Link href="/signup">
+                <Button
+                  display={{ base: "none", md: "inline-flex" }}
+                  fontSize={"sm"}
+                  fontWeight={600}
+                  color={"white"}
+                  bg={"primary.100"}
+                  href={"#"}
+                  _hover={{
+                    bg: "primary.200",
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </Link>
             </>
           )}
         </Stack>

@@ -16,8 +16,8 @@ import { useRouter } from "next/router";
 import { useAuth } from "../context/AuthUserContext";
 import { useState } from "react";
 
-export default function SimpleCard() {
-  const { authUser, loading, signUp } = useAuth();
+export default function SimpleCard({ formType }) {
+  const { authUser, loading, signUp, signIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -30,8 +30,13 @@ export default function SimpleCard() {
     console.log("running! ", e);
     e.preventDefault();
     try {
-      const result = await signUp(email, password);
-      console.log("user created successfully: ", result);
+      var result;
+      if (formType == "signUp") {
+        result = await signUp(email, password);
+      } else {
+        result = await signIn(email, password);
+      }
+      console.log("auth success: ", result);
       router.push("/");
     } catch (error) {
       console.log("error: ", error);
@@ -90,7 +95,7 @@ export default function SimpleCard() {
                 }}
                 onClick={onSubmit}
               >
-                Sign in
+                {formType == "signUp" ? "Sign up" : "Sign in"}
               </Button>
             </Stack>
           </Stack>
