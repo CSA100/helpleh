@@ -13,7 +13,7 @@ import {
 import OppDetailsModal from "../components/oppdetails";
 
 
-export default function OppCard({ opp }) {
+export default function OppCard({ opp, children}) {
   return (
     <Center py={6}>
       <Stack
@@ -66,7 +66,7 @@ export default function OppCard({ opp }) {
             <b>Job Scope:</b> {opp.jobscope}
           </Text> */}
           <Divider></Divider>
-            <OppDetailsModal></OppDetailsModal>
+          {children}
         </Stack>
           </Stack>
         </Stack>
