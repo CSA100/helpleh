@@ -30,7 +30,23 @@ export default function OppDetails() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-      <Button onClick={onOpen}>Details</Button>
+              <Button
+              size="md"
+              fontSize={"sm"}
+              rounded={"full"}
+              bg={"primary.100"}
+              color={"white"}
+              variant="outline"
+              _hover={{
+                bg: "primary.200",
+              }}
+              _focus={{
+                bg: "primary.100",
+              }}
+              onClick={onOpen}
+            >
+              See Details
+            </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

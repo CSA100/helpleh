@@ -10,6 +10,8 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import OppDetailsModal from "../components/oppdetails";
+
 
 export default function OppCard({ opp }) {
   return (
@@ -64,24 +66,7 @@ export default function OppCard({ opp }) {
             <b>Job Scope:</b> {opp.jobscope}
           </Text> */}
           <Divider></Divider>
-          <Button
-              size="md"
-              fontSize={"sm"}
-              rounded={"full"}
-              bg={"primary.100"}
-              color={"white"}
-              boxShadow={
-                "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-              }
-              _hover={{
-                bg: "primary.200",
-              }}
-              _focus={{
-                bg: "primary.100", // to change
-              }}
-            >
-              See Details
-            </Button>
+            <OppDetailsModal></OppDetailsModal>
         </Stack>
           </Stack>
         </Stack>
