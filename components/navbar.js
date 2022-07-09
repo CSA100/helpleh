@@ -14,7 +14,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -29,6 +28,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { useAuth } from "../context/AuthUserContext";
+import Link from "./link";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -62,16 +62,12 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            {/* <Box boxSize="sm">
-              <Image src="../images/Logo.png" alt="Logo" />
-            </Box> */}
-          </Text>
-
+              <Image 
+              boxSize='80px'
+              objectFit='cover'
+              src='/images/Logo.png' 
+              alt='Logo'
+              />
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -105,29 +101,32 @@ export default function WithSubnavigation() {
           )}
           {!authUser && (
             <>
-              <Button
-                as={"a"}
-                fontSize={"sm"}
-                fontWeight={400}
-                variant={"link"}
-                href={"/login"}
-              >
-                Sign In
-              </Button>
-              <Button
-                as={"a"}
-                display={{ base: "none", md: "inline-flex" }}
-                fontSize={"sm"}
-                fontWeight={600}
-                color={"white"}
-                bg={"primary.100"}
-                href={"/signup"}
-                _hover={{
-                  bg: "primary.200",
-                }}
-              >
-                Sign Up
-              </Button>
+              <Link href="/login">
+                <Button
+                  as={"a"}
+                  fontSize={"sm"}
+                  fontWeight={400}
+                  variant={"link"}
+                  href={"/login"}
+                >
+                  Sign In
+                </Button>
+              </Link>
+              <Link href="/signup">
+                <Button
+                  display={{ base: "none", md: "inline-flex" }}
+                  fontSize={"sm"}
+                  fontWeight={600}
+                  color={"white"}
+                  bg={"primary.100"}
+                  href={"#"}
+                  _hover={{
+                    bg: "primary.200",
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </Link>
             </>
           )}
         </Stack>
