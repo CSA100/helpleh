@@ -44,7 +44,17 @@ export default function useFirebaseAuth() {
 
   // sign up
   const signUp = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password).then(
+      function (user) {
+        var user = firebase.auth().currentUser;
+        console.log("userr: ", user);
+      },
+      function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      }
+    );
   };
 
   // sign out
