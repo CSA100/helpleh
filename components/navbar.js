@@ -296,35 +296,24 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "Home",
+    label: "Opportunities",
     children: [
       {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
+        label: "View Opportunities",
+        subLabel: "Find your next volunteering opportunity!",
+        href: "/volunteer/opportunities",
       },
       {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
+        label: "Manage Upcoming Activities",
+        subLabel: "Manage your volunteer activities here!",
+        href: "/volunteer/manage",
       },
     ],
   },
   {
-    label: "Opportunities",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
+    label: "Rewards",
+    href: "/volunteer/rewards",
+  }
   // {
   //   label: 'Learn Design',
   //   href: '#',

@@ -1,31 +1,27 @@
-import UserCard from "../../components/user";
+import UserCard from "../../components/usercard";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../context/AuthUserContext";
 
 export default function Profile() {
-  const [opps, setOpps] = useState([]);
+  const {authUser} = useAuth()
+  const [user, setUser] = useState({});
   useEffect(() => {
     (async () => {
       const querySnapshot = await getDocs(
-        collection(db, "User")
+        collection(db, "User"),
+        where('uid', '==', authUser.uid)
       );
-      const userlist = [];
-      console.log(userlist)
       querySnapshot.forEach((doc) => {
-        const obj = doc.data();
-        obj["id"] = doc.id;
-        userlist.push(obj);
+        setUser(doc);
       });
-      setOpps(userlist);
     })();
-  }, []);
+  }, [authUser]);
   return (
     <>
-      {opps.map((opp) => (
-        <UserCard key={opp.id} opp={opp} >
-        </UserCard>
-      ))}
+      <UserCard key={user.id} opp={user} >
+      </UserCard>
     </>
   );
 }
