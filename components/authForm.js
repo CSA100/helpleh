@@ -76,7 +76,7 @@ export default function AuthForm({ formType }) {
               : "Sign in to your account"}
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            to enjoy all of our cool <Link color={"blue.400"}>features</Link> ✌️
+            to start your volunteering journey with us✌️
           </Text>
         </Stack>
         <Box
