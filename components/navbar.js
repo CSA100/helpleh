@@ -87,11 +87,11 @@ export default function WithSubnavigation() {
           {authUser && (
             <>
               <Button
-                // as={"a"}
+                as={"a"}
                 // fontSize={"sm"}
                 // fontWeight={400}
                 variant={"solid"}
-                href={"#"}
+                href={"/volunteer/profile"}
               >
                 Profile
               </Button>
@@ -313,7 +313,7 @@ const NAV_ITEMS = [
   {
     label: "Rewards",
     href: "/volunteer/rewards",
-  }
+  },
   // {
   //   label: 'Learn Design',
   //   href: '#',

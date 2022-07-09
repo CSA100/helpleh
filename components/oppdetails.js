@@ -19,9 +19,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
-import { CalendarIcon, EditIcon } from '@chakra-ui/icons'
-
-
+import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 
 
 export default function OppDetails({opp, onAccept, index}) {
@@ -29,22 +27,22 @@ export default function OppDetails({opp, onAccept, index}) {
   return (
     <>
       <Button
-      size="md"
-      fontSize={"sm"}
-      rounded={"full"}
-      bg={"primary.100"}
-      color={"white"}
-      variant="outline"
-      _hover={{
-        bg: "primary.200",
-      }}
-      _focus={{
-        bg: "primary.100",
-      }}
-      onClick={onOpen}
-    >
-      See Details
-    </Button>
+        size="md"
+        fontSize={"sm"}
+        rounded={"full"}
+        bg={"primary.100"}
+        color={"white"}
+        variant="outline"
+        _hover={{
+          bg: "primary.200",
+        }}
+        _focus={{
+          bg: "primary.100",
+        }}
+        onClick={onOpen}
+      >
+        See Details
+      </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -55,14 +53,10 @@ export default function OppDetails({opp, onAccept, index}) {
               mt={-6}
               mx={-6}
               mb={0}
-              pos={'relative'}
-              overflow='hidden'
-              >
-              <Image
-                alt=''
-                src={opp.imageURL}
-                layout={'fill'}
-              />
+              pos={"relative"}
+              overflow="hidden"
+            >
+              <Image alt="" src={opp.imageURL} layout={"fill"} />
             </Box>
           </ModalHeader>
           <ModalCloseButton />
