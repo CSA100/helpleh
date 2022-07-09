@@ -26,7 +26,7 @@ function onAccept() {
   return
 }
 
-export default function OppDetails() {
+export default function OppDetails({opp}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -60,32 +60,28 @@ export default function OppDetails() {
                 color={useColorModeValue('gray.700', 'white')}
                 fontSize={'2xl'}
                 fontFamily={'body'}>
-                [Opportunity Name]
+                {opp.title}
               </Heading>
               <Text color={'gray.500'}>
-                [Opportunity job description] Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                erat, sed diam voluptua.
+                {opp.jobscope}
               </Text>
             </Stack>
             <HStack mt={4}>
               <CalendarIcon />
-                <Text> 9am-12pm 17 July 2022 </Text>
+                <Text> {opp.datetime} </Text>
             </HStack>
             <Stack mt={6} spacing={4} align={'left'}>
               <Text fontWeight={600}>Skills Needed</Text>
               <HStack spacing={2}>
-                <Tag size='lg' borderRadius='full' colorScheme='red'>
-                  <TagLabel>
-                    Cooking
-                  </TagLabel>
-                </Tag>
-                <Tag size='lg' borderRadius='full' colorScheme='red'>
-                  <TagLabel>
-                    Children
-                  </TagLabel>
-                </Tag>
-                
+                {opp.skills.map((skill, i) => {
+                  return (
+                    <Tag key={i} size='lg' borderRadius='full' colorScheme='red'>
+                      <TagLabel>
+                        {skill}
+                      </TagLabel>
+                    </Tag>
+                  )
+                })}
               </HStack>
             </Stack>
         

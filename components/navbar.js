@@ -5,6 +5,7 @@ import {
   Text,
   IconButton,
   Button,
+  Image,
   Menu,
   MenuButton,
   MenuList,
@@ -66,7 +67,9 @@ export default function WithSubnavigation() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            <Box boxSize='sm'>
+              <Image src='../images/Logo.png' alt='Logo'/>
+            </Box>
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>

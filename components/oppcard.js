@@ -2,6 +2,7 @@ import {
   Badge,
   Button,
   Center,
+  Divider,
   Flex,
   Heading,
   Image,
@@ -16,12 +17,12 @@ export default function OppCard({ opp }) {
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm: "550px", md: "550px" }}
-        height={{ sm: "300px", md: "300px" }}
+        w={{ sm:"480px", md: "480px" }}
+        height={{ sm: "250px", md: "250px" }}
         direction={{ base: "row" }}
         bg={"white"}
         color="black"
-        boxShadow={"2xl"}
+        boxShadow={"md"}
         padding={4}
       >
         <Flex
@@ -32,6 +33,7 @@ export default function OppCard({ opp }) {
         >
           {/* Display Picture */}
           <Image
+            rounded="lg"
             alt=""
             objectFit="cover"
             boxSize={{ sm: "90%", md: "90%" }}
@@ -41,13 +43,11 @@ export default function OppCard({ opp }) {
           />
         </Flex>
         <Stack
-          flex={1}
-          flexDirection="column"
           justifyContent="center"
-          alignItems="left"
-          p={1}
-          pt={2}
+          p={4}
+          pt={4}
         >
+          <Stack alignItems="left">
           <Heading fontSize={"2xl"} fontFamily={"body"}>
             {opp.orgname}
           </Heading>
@@ -60,20 +60,12 @@ export default function OppCard({ opp }) {
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
             <b>Date & Time:</b> {opp.datetime}
           </Text>
-          <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
+          {/* <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
             <b>Job Scope:</b> {opp.jobscope}
-          </Text>
-
-          <Stack
-            width={"80%"}
-            mt={"2rem"}
-            direction={"row"}
-            padding={1}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-          >
-            <Button
-              flex={1}
+          </Text> */}
+          <Divider></Divider>
+          <Button
+              size="md"
               fontSize={"sm"}
               rounded={"full"}
               bg={"primary.100"}
@@ -82,17 +74,17 @@ export default function OppCard({ opp }) {
                 "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
               }
               _hover={{
-                bg: "blue.500",
+                bg: "primary.200",
               }}
               _focus={{
-                bg: "blue.500",
+                bg: "primary.100", // to change
               }}
             >
-              Accept
+              See Details
             </Button>
+        </Stack>
           </Stack>
         </Stack>
-      </Stack>
     </Center>
   );
 }
