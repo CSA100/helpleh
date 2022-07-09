@@ -11,6 +11,7 @@ import {
     Link,
     Badge,
     useColorModeValue,
+    Divider,
   } from '@chakra-ui/react';
   
   export default function RewardPage() {
@@ -36,12 +37,11 @@ import {
               }
               ></Image>
             </Center>
-            <br></br>
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
             $10 Starbucks Gift Card
           </Heading>
-  
-          <Stack mt={8} direction={'row'} spacing={4}>
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
           <Badge
               px={3}
               py={3}
@@ -55,9 +55,6 @@ import {
               rounded={'full'}
               bg={'primary.100'}
               color={'white'}
-              boxShadow={
-                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-              }
               _hover={{
                 bg: 'primary.200',
               }}
@@ -87,12 +84,11 @@ import {
               }
               ></Image>
             </Center>
-            <br></br>
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
             $10 Coffee Bean Gift Card
           </Heading>
-  
-          <Stack mt={8} direction={'row'} spacing={4}>
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
           <Badge
               px={3}
               py={3}
@@ -138,12 +134,11 @@ import {
               }
               ></Image>
             </Center>
-            <br></br>
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
             $10 FairPrice Voucher
           </Heading>
-  
-          <Stack mt={8} direction={'row'} spacing={4}>
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
           <Badge
               px={3}
               py={3}
@@ -189,12 +184,11 @@ import {
               }
               ></Image>
             </Center>
-            <br></br>
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
+          <Heading mt={3} fontSize={'2xl'} fontFamily={'body'}>
             $50 Capital Voucher
           </Heading>
-  
-          <Stack mt={8} direction={'row'} spacing={4}>
+          <Divider mt={2}></Divider>
+          <Stack mt={4} direction={'row'} spacing={4}>
           <Badge
               px={3}
               py={3}
