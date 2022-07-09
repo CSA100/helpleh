@@ -12,12 +12,31 @@ import {
     Badge,
     useColorModeValue,
     Divider,
+    HStack,
   } from '@chakra-ui/react';
   
   export default function RewardPage() {
     return (
       <Center py={6}>
         <VStack>
+        <Box
+          minWidth={'700px'}
+          bg={useColorModeValue('white', 'gray.900')}
+          boxShadow={'md'}
+          rounded={'xl'}
+          p={6}
+          textAlign={'left'}>
+            <HStack>
+              <Heading fontSize={'2xl'} fontFamily={'body'}>
+              User Name
+              </Heading>
+              <Center height='150px'>
+  <Divider orientation='vertical' />
+</Center>
+            </HStack>
+          <Stack mt={4} direction={'row'} spacing={4}>
+          </Stack>
+        </Box>
         <Box
           maxW={'400px'}
           w={'full'}
