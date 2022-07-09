@@ -143,6 +143,7 @@ export default function SignupForm() {
               <FormLabel>Age</FormLabel>
               <Input type="number" value={age} onChange={handleAgeChange} />
             </FormControl>
+            <FormLabel>Skills</FormLabel>
             <Flex wrap="wrap">
               {[
                 { name: "children", color: "cyan" },
