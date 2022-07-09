@@ -1,9 +1,15 @@
 import {
     Box,
     Flex,
+    Avatar,
     Text,
     IconButton,
     Button,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuDivider,
     Stack,
     Collapse,
     Icon,
@@ -68,6 +74,20 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+            <Button
+              as={'a'}
+              fontSize={'sm'}
+              fontWeight={400}
+              variant={'link'}
+              href={'#'}>
+              Profile
+            </Button>
+            <Avatar
+              size={'sm'}
+              src={
+                'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+              }
+            />
             <Button
               as={'a'}
               fontSize={'sm'}
@@ -245,7 +265,7 @@ import {
   
   const NAV_ITEMS = [
     {
-      label: 'Inspiration',
+      label: 'Home',
       children: [
         {
           label: 'Explore Design Work',
@@ -260,7 +280,7 @@ import {
       ],
     },
     {
-      label: 'Find Work',
+      label: 'Opportunities',
       children: [
         {
           label: 'Job Board',
@@ -274,12 +294,12 @@ import {
         },
       ],
     },
-    {
-      label: 'Learn Design',
-      href: '#',
-    },
-    {
-      label: 'Hire Designers',
-      href: '#',
-    },
+    // {
+    //   label: 'Learn Design',
+    //   href: '#',
+    // },
+    // {
+    //   label: 'Hire Designers',
+    //   href: '#',
+    // },
   ];
