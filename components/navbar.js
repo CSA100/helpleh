@@ -6,7 +6,7 @@ import {
   IconButton,
   Button,
   Image,
-  Link as ChakraLink,
+  Link,
   HStack,
   Menu,
   MenuButton,
@@ -30,7 +30,6 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { useAuth } from "../context/AuthUserContext";
-import Link from "./link";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -107,30 +106,29 @@ export default function WithSubnavigation() {
           )}
           {!authUser && (
             <HStack alignItems="center">
-              <Link href="/login">
-                <Button
-                  as={"a"}
-                  fontSize={"sm"}
-                  fontWeight={400}
-                  variant={"link"}
-                >
-                  Sign In
-                </Button>
-              </Link>
-              <Link href="/signup">
-                <Button
-                  display={{ base: "none", md: "inline-flex" }}
-                  fontSize={"sm"}
-                  fontWeight={600}
-                  color={"white"}
-                  bg={"primary.100"}
-                  _hover={{
-                    bg: "primary.200",
-                  }}
-                >
-                  Sign Up
-                </Button>
-              </Link>
+              <Button
+                as={"a"}
+                fontSize={"sm"}
+                fontWeight={400}
+                variant={"link"}
+                href="/login"
+              >
+                Sign In
+              </Button>
+              <Button
+                as={"a"}
+                display={{ base: "none", md: "inline-flex" }}
+                fontSize={"sm"}
+                fontWeight={600}
+                color={"white"}
+                bg={"primary.100"}
+                _hover={{
+                  bg: "primary.200",
+                }}
+                href="/signup"
+              >
+                Sign Up
+              </Button>
             </HStack>
           )}
         </Stack>
@@ -154,7 +152,7 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <ChakraLink
+              <Link
                 p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
@@ -166,7 +164,7 @@ const DesktopNav = () => {
                 }}
               >
                 {navItem.label}
-              </ChakraLink>
+              </Link>
             </PopoverTrigger>
 
             {navItem.children && (
