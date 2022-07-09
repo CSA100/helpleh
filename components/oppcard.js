@@ -10,6 +10,8 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import OppDetailsModal from "../components/oppdetails";
+
 
 export default function OppCard({ opp, children}) {
   return (
@@ -17,7 +19,7 @@ export default function OppCard({ opp, children}) {
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm:"480px", md: "480px" }}
+        w={{ sm:"550px", md: "550px" }}
         height={{ sm: "250px", md: "250px" }}
         direction={{ base: "row" }}
         bg={"white"}
@@ -36,9 +38,9 @@ export default function OppCard({ opp, children}) {
             rounded="lg"
             alt=""
             objectFit="cover"
-            boxSize={{ sm: "90%", md: "90%" }}
+            boxSize={{ sm: "200px", md: "90%" }}
             src={
-              "https://www.healthcare.com.sg/wp-content/uploads/2020/10/st-andrews-nursing-home-buangkok.jpg"
+              opp.imageURL 
             }
           />
         </Flex>
@@ -46,8 +48,9 @@ export default function OppCard({ opp, children}) {
           justifyContent="center"
           p={4}
           pt={4}
+          w={{ sm:"400px", md: "400px" }}
+          height={{ sm: "215px", md: "215px" }}
         >
-          <Stack alignItems="left">
           <Heading fontSize={"2xl"} fontFamily={"body"}>
             {opp.orgname}
           </Heading>
@@ -66,8 +69,7 @@ export default function OppCard({ opp, children}) {
           <Divider></Divider>
           {children}
         </Stack>
-          </Stack>
-        </Stack>
+      </Stack>
     </Center>
   );
 }
