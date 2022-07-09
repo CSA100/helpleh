@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const FirebaseCredentials = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
@@ -7,5 +8,6 @@ const FirebaseCredentials = {
 };
 
 const app = initializeApp(FirebaseCredentials);
+export const db = getFirestore(app);
 
 export default app;
