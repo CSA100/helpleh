@@ -20,23 +20,40 @@ import {
       <Center py={6}>
         <VStack>
         <Box
-          minWidth={'700px'}
+          minWidth={'810px'}
           bg={useColorModeValue('white', 'gray.900')}
           boxShadow={'md'}
           rounded={'xl'}
           p={6}
-          textAlign={'left'}>
-            <HStack>
-              <Heading fontSize={'2xl'} fontFamily={'body'}>
-              User Name
+          textAlign={'left'}
+          bgGradient="linear(to-t, primary.200, primary.300)">
+            <VStack>
+              <Heading fontSize={'xl'} fontFamily={'body'}>
+              Current Points:
               </Heading>
-              <Center height='150px'>
-                <Divider orientation='vertical' />
-              </Center>
-            </HStack>
-            <Stack mt={4} direction={'row'} spacing={4}>
-            </Stack>
+              <Box
+              bgColor={"primary.100"}
+              width={"220px"}
+              textAlign={"center"}
+              rounded={"3xl"}
+              p={4}>
+                <Text
+                fontSize={'5xl'}
+                color={'white'}
+                fontWeight={'bold'}>2,000</Text>
+              </Box>
+              <Box
+              bgColor={"gray.200"}
+              width={"180px"}
+              textAlign={"center"}
+              rounded={"full"}
+              p={1}>
+                <Text
+                fontWeight={'medium'}>Lifetime Points: 4,300</Text>
+              </Box>
+            </VStack>
           </Box>
+          <br></br>
           <HStack>
         <Box
           maxW={'400px'}
@@ -124,9 +141,6 @@ import {
               rounded={'full'}
               bg={'primary.100'}
               color={'white'}
-              boxShadow={
-                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-              }
               _hover={{
                 bg: 'primary.200',
               }}
@@ -177,9 +191,6 @@ import {
               rounded={'full'}
               bg={'primary.100'}
               color={'white'}
-              boxShadow={
-                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-              }
               _hover={{
                 bg: 'primary.200',
               }}
@@ -228,9 +239,6 @@ import {
               rounded={'full'}
               bg={'primary.100'}
               color={'white'}
-              boxShadow={
-                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-              }
               _hover={{
                 bg: 'primary.200',
               }}
