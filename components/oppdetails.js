@@ -21,12 +21,9 @@ import Image from "next/image";
 import React from "react";
 import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 
-function onAccept() {
-  return;
-}
 
-export default function OppDetails({ opp, isOrg }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export default function OppDetails({opp, onAccept, index}) {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <Button
@@ -100,7 +97,7 @@ export default function OppDetails({ opp, isOrg }) {
             <Button variant="ghost" onClick={onClose}>
               Close
             </Button>
-            <Button colorScheme="blue" mr={3} onClick={onAccept}>
+            <Button colorScheme="blue" mr={3} onClick={() => onAccept(index)}>
               Volunteer
             </Button>
           </ModalFooter>
