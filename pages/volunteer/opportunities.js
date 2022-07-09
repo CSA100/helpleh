@@ -1,4 +1,5 @@
 import OppCard from "../../components/oppcard";
+import OppDetails from "../../components/oppDetails";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
@@ -22,7 +23,9 @@ export default function Opportunities() {
   return (
     <>
       {opps.map((opp) => (
-        <OppCard key={opp.id} opp={opp} />
+        <OppCard key={opp.id} opp={opp} >
+          <OppDetails key={opp.id} opp={opp}/>
+        </OppCard>
       ))}
     </>
   );
