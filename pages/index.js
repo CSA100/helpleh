@@ -22,7 +22,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <WithSubnavigation />
-      <SimpleCard />
       <LargeWithLogoLeft />
     </div>
   );
