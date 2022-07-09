@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { getAuth } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import app from "../firebase";
 
 const auth = getAuth(app);
@@ -32,8 +37,26 @@ export default function useFirebaseAuth() {
     return () => unsubscribe();
   }, []);
 
+  // sign in
+  const signIn = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password);
+  };
+
+  // sign up
+  const signUp = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  // sign out
+  const logOut = () => {
+    signOut(auth);
+  };
+
   return {
     authUser,
     loading,
+    signIn,
+    signUp,
+    logOut,
   };
 }

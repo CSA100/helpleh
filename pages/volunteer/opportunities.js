@@ -1,15 +1,29 @@
 import OppCard from "../../components/oppcard";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useEffect, useState } from "react";
 
 export default function Opportunities() {
+  const [opps, setOpps] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const querySnapshot = await getDocs(
+        collection(db, "OpportunityListings")
+      );
+      const opplist = [];
+      querySnapshot.forEach((doc) => {
+        const obj = doc.data();
+        obj["id"] = doc.id;
+        opplist.push(obj);
+      });
+      setOpps(opplist);
+    })();
+  }, []);
   return (
-    <OppCard
-      opp={{
-        name: "Test Org",
-        contact: "+65 1234 5678",
-        location: "The place",
-        datetime: "10 July 7 am",
-        jobscope: "Show children the way",
-      }}
-    />
+    <>
+      {opps.map((opp) => (
+        <OppCard key={opp.id} opp={opp} />
+      ))}
+    </>
   );
 }

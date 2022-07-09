@@ -49,7 +49,7 @@ export default function OppCard({ opp }) {
         >
           <Stack alignItems="left">
           <Heading fontSize={"2xl"} fontFamily={"body"}>
-            {opp.name}
+            {opp.orgname}
           </Heading>
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
             <b>Contact:</b> {opp.contact}
