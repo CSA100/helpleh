@@ -17,7 +17,7 @@ import {
   Tag,
   TagLabel
 } from '@chakra-ui/react';
-import { CalendarIcon } from '@chakra-ui/icons'
+import { CalendarIcon, EditIcon } from '@chakra-ui/icons'
 import Image from 'next/image';
 import React from 'react'
 
@@ -26,28 +26,27 @@ function onAccept() {
   return
 }
 
-export default function OppDetails({opp}) {
+export default function OppDetails({opp, isOrg}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-              <Button
-              size="md"
-              fontSize={"sm"}
-              rounded={"full"}
-              bg={"primary.100"}
-              color={"white"}
-              variant="outline"
-              _hover={{
-                bg: "primary.200",
-              }}
-              _focus={{
-                bg: "primary.100",
-              }}
-              onClick={onOpen}
-            >
-              See Details
-            </Button>
-
+      <Button
+      size="md"
+      fontSize={"sm"}
+      rounded={"full"}
+      bg={"primary.100"}
+      color={"white"}
+      variant="outline"
+      _hover={{
+        bg: "primary.200",
+      }}
+      _focus={{
+        bg: "primary.100",
+      }}
+      onClick={onOpen}
+    >
+      See Details
+    </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -62,9 +61,8 @@ export default function OppDetails({opp}) {
               overflow='hidden'
               >
               <Image
-                src={
-                  opp.imageURL
-                }
+                alt=''
+                src={opp.imageURL}
                 layout={'fill'}
               />
             </Box>
@@ -100,9 +98,7 @@ export default function OppDetails({opp}) {
                 })}
               </HStack>
             </Stack>
-        
           </ModalBody>
-
           <ModalFooter>
             <Button variant='ghost'onClick={onClose}>
               Close

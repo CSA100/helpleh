@@ -23,8 +23,8 @@ export default function Opportunities() {
   return (
     <>
       {opps.map((opp) => (
-        <OppCard key={opp.id} opp={opp} >
-          <OppDetails key={opp.id} opp={opp}/>
+        <OppCard key={opp.id} opp={opp}>
+          <OppDetails key={opp.id} opp={opp} />
         </OppCard>
       ))}
     </>
