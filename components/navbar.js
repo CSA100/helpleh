@@ -6,6 +6,8 @@ import {
   IconButton,
   Button,
   Image,
+  Link as ChakraLink,
+  HStack,
   Menu,
   MenuButton,
   MenuList,
@@ -61,13 +63,17 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-              <Image 
-              boxSize='80px'
-              objectFit='cover'
-              src='/images/Logo.png' 
-              alt='Logo'
-              />
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          alignItems="center"
+        >
+          <Image
+            boxSize="60px"
+            objectFit="cover"
+            src="/images/Logo.png"
+            alt="Logo"
+          />
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -100,14 +106,13 @@ export default function WithSubnavigation() {
             </>
           )}
           {!authUser && (
-            <>
+            <HStack alignItems="center">
               <Link href="/login">
                 <Button
                   as={"a"}
                   fontSize={"sm"}
                   fontWeight={400}
                   variant={"link"}
-                  href={"/login"}
                 >
                   Sign In
                 </Button>
@@ -119,7 +124,6 @@ export default function WithSubnavigation() {
                   fontWeight={600}
                   color={"white"}
                   bg={"primary.100"}
-                  href={"#"}
                   _hover={{
                     bg: "primary.200",
                   }}
@@ -127,7 +131,7 @@ export default function WithSubnavigation() {
                   Sign Up
                 </Button>
               </Link>
-            </>
+            </HStack>
           )}
         </Stack>
       </Flex>
@@ -150,7 +154,7 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              <ChakraLink
                 p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
@@ -162,7 +166,7 @@ const DesktopNav = () => {
                 }}
               >
                 {navItem.label}
-              </Link>
+              </ChakraLink>
             </PopoverTrigger>
 
             {navItem.children && (
