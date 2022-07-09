@@ -40,8 +40,12 @@ export default function useFirebaseAuth() {
   }, []);
 
   // sign in
-  const signIn = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const signIn = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      throw error;
+    }
   };
 
   // sign up

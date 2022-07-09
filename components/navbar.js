@@ -6,6 +6,8 @@ import {
   IconButton,
   Button,
   Image,
+  Link,
+  HStack,
   Menu,
   MenuButton,
   MenuList,
@@ -14,7 +16,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -61,17 +62,17 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            {/* <Box boxSize="sm">
-              <Image src="../images/Logo.png" alt="Logo" />
-            </Box> */}
-          </Text>
-
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          alignItems="center"
+        >
+          <Image
+            boxSize="60px"
+            objectFit="cover"
+            src="/images/Logo.png"
+            alt="Logo"
+          />
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -81,15 +82,15 @@ export default function WithSubnavigation() {
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
-          spacing={6}
+          spacing={4}
         >
           {authUser && (
             <>
               <Button
-                as={"a"}
-                fontSize={"sm"}
-                fontWeight={400}
-                variant={"link"}
+                // as={"a"}
+                // fontSize={"sm"}
+                // fontWeight={400}
+                variant={"solid"}
                 href={"#"}
               >
                 Profile
@@ -104,13 +105,13 @@ export default function WithSubnavigation() {
             </>
           )}
           {!authUser && (
-            <>
+            <HStack alignItems="center">
               <Button
                 as={"a"}
                 fontSize={"sm"}
                 fontWeight={400}
                 variant={"link"}
-                href={"/login"}
+                href="/login"
               >
                 Sign In
               </Button>
@@ -121,14 +122,14 @@ export default function WithSubnavigation() {
                 fontWeight={600}
                 color={"white"}
                 bg={"primary.100"}
-                href={"/signup"}
                 _hover={{
                   bg: "primary.200",
                 }}
+                href="/signup"
               >
                 Sign Up
               </Button>
-            </>
+            </HStack>
           )}
         </Stack>
       </Flex>

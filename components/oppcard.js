@@ -1,19 +1,16 @@
 import {
   Badge,
-  Button,
   Center,
   Divider,
   Flex,
   Heading,
   Image,
-  Link,
   Stack,
   Text,
+  HStack
 } from "@chakra-ui/react";
-import OppDetailsModal from "../components/oppdetails";
-
-
-export default function OppCard({ opp, children}) {
+import { CalendarIcon, EditIcon } from '@chakra-ui/icons'
+export default function OppCard({ opp, children, isOrg}) {
   return (
     <Center py={6}>
       <Stack
@@ -50,10 +47,13 @@ export default function OppCard({ opp, children}) {
           pt={4}
           w={{ sm:"400px", md: "400px" }}
           height={{ sm: "215px", md: "215px" }}
-        >
-          <Heading fontSize={"2xl"} fontFamily={"body"}>
-            {opp.orgname}
-          </Heading>
+        > 
+          <HStack justify="space-between">
+            <Heading fontSize={"2xl"} fontFamily={"body"}>
+              {opp.orgname}
+            </Heading>
+            {isOrg && <EditIcon />}
+          </HStack>
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
             <b>Contact:</b> {opp.contact}
           </Text>
