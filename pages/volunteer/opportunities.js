@@ -1,5 +1,5 @@
 import OppCard from "../../components/oppcard";
-import OppDetails from "../../components/oppDetails";
+import OppDetails from "../../components/oppdetails";
 import { collection, getDocs, doc, updateDoc, arrayUnion} from "firebase/firestore";
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
@@ -7,18 +7,21 @@ import {useAuth} from "../../context/AuthUserContext"
 
 export default function Opportunities() {
   const [opps, setOpps] = useState([]);
+  const [close, setClose] =useState(false)
   const {authUser} = useAuth();
 
   const onAccept = async (index) => {
-  const userRef = doc(db, "User", authUser.uid);
-  try{
-    await updateDoc(userRef, {
-      activities: arrayUnion(opps[index].id)
-    })
-    
+    console.log("Close: ", close)
+    const userRef = doc(db, "User", authUser.uid);
+    try{
+      await updateDoc(userRef, {
+        activities: arrayUnion(opps[index].id)
+      })
+      
     }catch(e){
       console.error("update error: ", e)
     }
+    setClose(true)
   } 
 
   useEffect(() => {
@@ -39,7 +42,7 @@ export default function Opportunities() {
     <>
       {opps.map((opp, index) => (
         <OppCard key={opp.id} opp={opp}>
-          <OppDetails key={opp.id} opp={opp} index={index} onAccept={() => onAccept(index)}/>
+          <OppDetails key={opp.id} opp={opp} index={index} close={close} onAccept={() => onAccept(index)}/>
         </OppCard>
       ))}
     </>

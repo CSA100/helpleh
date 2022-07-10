@@ -18,12 +18,19 @@ import {
   TagLabel,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 
 
-export default function OppDetails({opp, onAccept, index}) {
+export default function OppDetails({opp, onAccept, index, close}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  console.log("Close val: ", close)
+  useEffect(() => {
+    console.log("use Effect ran")
+    if(close){
+      onClose()
+    }
+  }, [close])
   return (
     <>
       <Button
@@ -92,12 +99,17 @@ export default function OppDetails({opp, onAccept, index}) {
                 })}
               </HStack>
             </Stack>
+            
           </ModalBody>
           <ModalFooter>
+                
+            
             <Button variant="ghost" onClick={onClose}>
               Close
             </Button>
-            <Button colorScheme="blue" mr={3} onClick={() => onAccept(index)}>
+            <Button colorScheme="blue" mr={3} onClick={() => 
+              onAccept(index)
+            }>
               Volunteer
             </Button>
           </ModalFooter>
