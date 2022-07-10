@@ -9,7 +9,9 @@ Vist our [HelpLeh!](https://helpleh.vercel.app/login) MVP site to get a glimpse 
 
 ## Dev Environment
 
-First, run the development server:
+1. Please provide your own Firebase API Key in an .env.local file
+
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -17,4 +19,4 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
