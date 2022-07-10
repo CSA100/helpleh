@@ -58,7 +58,7 @@ export default function OppDetails({opp, onAccept, index}) {
               overflow="hidden"
             >
               {opp.imageURL ? (
-                <Image alt="" src={opp.imageURL} layout={"fill"} />
+                <Image alt="" src={opp.imageURL} layout={"fill"} objectFit="contain"/>
               ) : (
                 <></>
               )}
