@@ -1,9 +1,9 @@
 import OppCard from "../../components/oppcard";
-import OppDetails from "../../components/oppDetails";
+import OppDetails from "../../components/oppdetails";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
-import { useAuth } from "../context/AuthUserContext";
+import { useAuth } from "../../context/AuthUserContext";
 
 export default function Opportunities() {
   const { authUser } = useAuth();
@@ -27,8 +27,8 @@ export default function Opportunities() {
   return (
     <>
       {opps.map((opp) => (
-        <OppCard key={opp.id} opp={opp} >
-          <OppDetails key={opp.id} opp={opp}/>
+        <OppCard key={opp.id} opp={opp}>
+          <OppDetails key={opp.id} opp={opp} />
         </OppCard>
       ))}
     </>
