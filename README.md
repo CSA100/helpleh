@@ -11,6 +11,13 @@ Vist our [HelpLeh!](https://helpleh.vercel.app/login) MVP site to get a glimpse 
 
 1. Please provide your own Firebase API Key in an .env.local file
 
+```
+# .env.local
+NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY=<your public api key>
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=<your auth domain>
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=<your project id>
+```
+
 2. Run the development server:
 
 ```bash
