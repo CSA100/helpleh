@@ -3,12 +3,22 @@ import OppDetails from "../../components/oppdetails";
 import { collection, getDocs, doc, updateDoc, arrayUnion} from "firebase/firestore";
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
-import {useAuth} from "../../context/AuthUserContext"
+import { useAuth } from "../../context/AuthUserContext"
+import { useToast } from '@chakra-ui/react'
 
 export default function Opportunities() {
   const [opps, setOpps] = useState([]);
-  const [close, setClose] =useState(false)
   const {authUser} = useAuth();
+  const toast = useToast();
+
+  const showToast = () =>
+    toast({
+      title: 'Activity Added',
+      description: "We've successfully added this activity to you list.",
+      status: 'success',
+      duration: 4500,
+      isClosable: true,
+    })
 
   const onAccept = async (index) => {
     console.log("Close: ", close)
@@ -17,11 +27,10 @@ export default function Opportunities() {
       await updateDoc(userRef, {
         activities: arrayUnion(opps[index].id)
       })
-      
     }catch(e){
       console.error("update error: ", e)
     }
-    setClose(true)
+    showToast()
   } 
 
   useEffect(() => {
@@ -42,7 +51,7 @@ export default function Opportunities() {
     <>
       {opps.map((opp, index) => (
         <OppCard key={opp.id} opp={opp}>
-          <OppDetails key={opp.id} opp={opp} index={index} close={close} onAccept={() => onAccept(index)}/>
+          <OppDetails key={opp.id} opp={opp} index={index} onAccept={() => onAccept(index)}/>
         </OppCard>
       ))}
     </>

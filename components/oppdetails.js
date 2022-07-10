@@ -22,15 +22,9 @@ import React, { useEffect } from "react";
 import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 
 
-export default function OppDetails({opp, onAccept, index, close}) {
+export default function OppDetails({opp, onAccept, index}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  console.log("Close val: ", close)
-  useEffect(() => {
-    console.log("use Effect ran")
-    if(close){
-      onClose()
-    }
-  }, [close])
+ 
   return (
     <>
       <Button
@@ -111,8 +105,10 @@ export default function OppDetails({opp, onAccept, index, close}) {
             <Button variant="ghost" onClick={onClose}>
               Close
             </Button>
-            <Button colorScheme="blue" mr={3} onClick={() => 
+            <Button colorScheme="blue" mr={3} onClick={() => {
               onAccept(index)
+              onClose()
+            }
             }>
               Volunteer
             </Button>
