@@ -35,7 +35,7 @@ export default function SignupForm() {
 
   useEffect(() => {
     if (authUser) {
-      router.push("/");
+      router.push("/volunteer/opportunities");
     }
   }, [authUser]);
 

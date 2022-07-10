@@ -28,7 +28,7 @@ export default function AuthForm({ formType }) {
 
   useEffect(() => {
     if (authUser) {
-      router.push("/");
+      router.push("/volunteer/opportunities");
     }
   }, [authUser]);
 
