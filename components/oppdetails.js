@@ -63,7 +63,11 @@ export default function OppDetails({opp, onAccept, index, close}) {
               pos={"relative"}
               overflow="hidden"
             >
-              <Image alt="" src={opp.imageURL} layout={"fill"} />
+              {opp.imageURL ? (
+                <Image alt="" src={opp.imageURL} layout={"fill"} />
+              ) : (
+                <></>
+              )}
             </Box>
           </ModalHeader>
           <ModalCloseButton />
