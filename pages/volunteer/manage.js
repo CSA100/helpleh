@@ -1,5 +1,3 @@
-import OppCard from "../../components/oppcard";
-import OppDetails from "../../components/oppDetails";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthUserContext";
 import {
