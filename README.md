@@ -7,6 +7,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Live Site 
 Vist our [HelpLeh!](https://helpleh.vercel.app/login) MVP site to get a glimpse of the experience volunteers would enjoy!
 
+You can sign-up with a fake account or use the test account:  
+email: newman@test.com 
+password: password 
+
 ## Dev Environment
 
 1. Please provide your own Firebase API Key in an .env.local file
